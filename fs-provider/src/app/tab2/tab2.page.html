@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Rentals
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item *ngFor="let rental of rentals">
+        <ion-button  (click)="navToRentalInfo()" shape="round" class="btn" block>
+            {{rental.housename}} in {{rental.destination}}
+        </ion-button>
+    </ion-item>
+
+  
+
+
+</ion-content>
+
+
+<ion-footer no-shadow>
+    <ion-toolbar position="bottom">
+      <ion-button (click)="navToNewRental()" shape="round" expand="block" >Create New Rental</ion-button>
+    </ion-toolbar>
+  </ion-footer>
