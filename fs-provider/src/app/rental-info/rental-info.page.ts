@@ -33,10 +33,17 @@ export class RentalInfoPage implements OnInit {
   accept(booking: Booking) {
     console.log(booking.status);
     booking.status = "ACCEPT";
+
   }
 
   reject(booking: Booking) {
     booking.status = "REJECT";
+  }
+
+  delete() {
+    this.httpClient.get(`http://localhost:3000/properties/${this.propertyId}/delete`).subscribe((response: any) => {
+      this.navCtrl.navigateBack("tabs");
+    })
   }
 
   ngOnInit() {
