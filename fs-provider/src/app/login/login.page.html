@@ -1,9 +1,8 @@
 <ion-content color="light" padding>
-
-    <ion-card class="welcome-card">
-        <ion-img src="https://blog.gohouse.com.br/wp-content/uploads/2018/09/Airbnb-Logo.png" height="40px"></ion-img>
-      </ion-card>
-  <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-card>
+        <ion-img src="https://www.ladn.eu/wp-content/uploads/2017/03/airbnb.png"></ion-img>
+      </ion-card> 
+  <form #form="ngForm">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
@@ -11,15 +10,24 @@
             <h3>Login</h3>
           </div>
           <div padding>
-            <ion-item>
-              <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+              <!-- <ion-item>
+                  <ion-input name="name" type="name" placeholder="Full Name" [(ngModel)]="user.name"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input name="role" type="role" placeholder="Role" [(ngModel)]="user.role"></ion-input>
+                  </ion-item-->
+            <ion-item> 
+              <ion-input name="email" type="email" placeholder="your@email.com" [(ngModel)]="provider.email"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+              <ion-input name="password" type="password" placeholder="Password" [(ngModel)]="provider.password"></ion-input>
             </ion-item>
           </div>
           <div padding>
-              <ion-button expand="full" (click)="navToProfile()">Navigate to Profile</ion-button>
+              <ion-button expand="full" (click)="submit()">Sign In!</ion-button>
+          </div>
+          <div padding>
+              <ion-button expand="full" (click)="navToRegister()">New User? Reigster Here!</ion-button>
           </div>
         </ion-col>
       </ion-row>

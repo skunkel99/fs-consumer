@@ -5,5 +5,42 @@
 </ion-header>
 
 <ion-content>
+ 
+
+    <ion-item>
+        <ion-label>Rental Location</ion-label>
+        <ion-input placeholder="Enter Input" [(ngModel)]="Rental.location"> </ion-input>
+      </ion-item>
+
+
+    <ion-item>
+        <ion-label>Rental Name</ion-label>
+        <ion-input placeholder="Enter Input" [(ngModel)]="Rental.houseName"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Host Name</ion-label>
+          <ion-input placeholder="Enter Input" [(ngModel)]="Rental.hostName"> </ion-input>
+        </ion-item>
+
+    <ion-item>
+        <ion-label>Rental Price (per night)</ion-label>
+        <ion-input placeholder="Enter Input" [(ngModel)]="Rental.pricePerNight"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Image URL</ion-label>
+          <ion-input placeholder="Enter Input" [(ngModel)]="Rental.imageUrl"> </ion-input>
+        </ion-item>
+
+        <!-- <ion-item>
+            <ion-label>ID</ion-label>
+            <ion-input placeholder="Enter Input" [(ngModel)]="Rental.providerId"> </ion-input>
+          </ion-item> -->
+
+        <div padding>
+            <ion-button expand="full" (click)="submit()">Submit!</ion-button>
+        </div>
+
 
 </ion-content>

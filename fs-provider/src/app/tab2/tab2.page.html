@@ -8,14 +8,14 @@
 
 <ion-content>
 
-    <ion-item *ngFor="let rental of rentals">
-        <ion-button  (click)="navToRentalInfo()" shape="round" class="btn" block>
-            {{rental.housename}} in {{rental.destination}}
-        </ion-button>
-    </ion-item>
-
-  
-
+    <div *ngFor="let rental of rentals">
+        <ion-card>
+          <ion-card-content>
+              <img src ="{{rental.imageUrl}}" (click)="navToRentalInfo(rental)">
+              {{rental.houseName}} in {{rental.location}}
+          </ion-card-content> 
+        </ion-card>
+      </div>
 
 </ion-content>
 

@@ -3,10 +3,32 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="tabs"></ion-back-button>
       </ion-buttons>
-      <ion-title>Rental Info</ion-title>
+      <ion-title *ngIf="currentProperty">
+        {{currentProperty.houseName}} in {{currentProperty.location}}
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-<ion-content>
-
-</ion-content>
+  <ion-content>
+      <ion-card *ngIf="currentProperty">
+          <ion-img src="{{currentProperty.imageUrl}}"></ion-img>
+        </ion-card> 
+  
+        <ion-title *ngIf="currentProperty">${{currentProperty.pricePerNight}} per night</ion-title> 
+  <ion-item>Past Bookings:</ion-item>
+        <ion-grid text-center>
+            <ion-row wrap>
+              <ion-col> <div *ngFor="let rental of bookings">
+                  <ion-card>
+                    <ion-card-content>
+                        {{rental.dateFrom}} to {{rental.dateTo}}
+                        <ion-button (click)="accept(rental)"> Accept</ion-button>  <ion-button (click)="reject(rental)"> Reject</ion-button>
+                    </ion-card-content> 
+                  </ion-card>
+                </div></ion-col>
+          
+            </ion-row>
+          </ion-grid>
+      
+  </ion-content>
+  
